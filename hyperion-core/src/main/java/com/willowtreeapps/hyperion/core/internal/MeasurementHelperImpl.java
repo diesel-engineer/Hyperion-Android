@@ -80,7 +80,7 @@ class MeasurementHelperImpl implements MeasurementHelper {
 
     public int toSp(float px) {
         float scaledDensity = displayMetrics.scaledDensity;
-        return (int) (px / scaledDensity);
+        return Math.round(px / scaledDensity);
     }
 
 }

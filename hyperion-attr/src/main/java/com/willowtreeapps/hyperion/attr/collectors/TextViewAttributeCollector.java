@@ -48,8 +48,10 @@ public class TextViewAttributeCollector extends TypedAttributeCollector<TextView
                 new ColorValue(view.getCurrentHintTextColor()),
                 new ColorDrawable(view.getCurrentHintTextColor())));
         attributes.add(new ViewAttribute<>("Typeface", view.getTypeface()));
-        attributes.add(new ViewAttribute<>("TextSize",
+        attributes.add(new ViewAttribute<>("TextSize(sp)",
                 attributeTranslator.translatePxToSp((int) view.getTextSize())));
+        attributes.add(new ViewAttribute<>("TextSize(dp)",
+                attributeTranslator.translatePx((int) view.getTextSize())));
         attributes.add(new ViewAttribute<>("AutoSizeMaxTextSize",
                 TextViewCompat.getAutoSizeMaxTextSize(view)));
         attributes.add(new ViewAttribute<>("AutoSizeMinTextSize",
